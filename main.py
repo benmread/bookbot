@@ -4,8 +4,15 @@ def main():
     with open("books/frankenstein.txt") as f:
         file_contents = f.read()
 
-    print(len(wordcount(file_contents)))
-    sortedlist(charactercount(file_contents))
+    sorted = sortedlist(charactercount(file_contents))
+
+    # report
+    print("--- Begin report of books/frankenstein.txt")
+    print(str(len(wordcount(file_contents))) + " words found in document\n")
+    for item in sorted:
+        if item["char"].isalpha(): # skip all the symbols
+            print(f"The '{item["char"]}' character was found {str(item["num"])} times")
+    print("--- End report ---")
 
 
 def wordcount(text):
