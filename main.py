@@ -7,7 +7,7 @@ def main():
     sorted = sortedlist(charactercount(file_contents))
 
     # report
-    print("--- Begin report of books/frankenstein.txt")
+    print("--- Begin report of books/frankenstein.txt ---")
     print(str(len(wordcount(file_contents))) + " words found in document\n")
     for item in sorted:
         if item["char"].isalpha(): # skip all the symbols
